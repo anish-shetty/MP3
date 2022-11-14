@@ -18,6 +18,15 @@ def test_env(env, function_name):
     [Task 1.1] Hint: Check out serverless_env.py
     """
     # [Your Code]
+    print("Vertical Scaling up:")
+    env.step(function_name, action={'vertical': 128, 'horizontal': 0})
+    env.print_info()
+    print('\n')
+
+    print("Horizontal Scaling out:")
+    env.step(function_name, action={'vertical': 0, 'horizontal': 1})
+    env.print_info()
+    print('\n')
     pass
 
 
@@ -130,15 +139,7 @@ def main():
     test_env(env, function_name)
     print('')
 
-    print("Vertical Scaling up:")
-    env.step(function_name, action = {'vertical':128, 'horizontal': 0})
-    env.print_info()
-    print('\n')
 
-    print("Horizontal Scaling out:")
-    env.step(function_name, action={'vertical': 0, 'horizontal': 1})
-    env.print_info()
-    print('\n')
 
 
 
